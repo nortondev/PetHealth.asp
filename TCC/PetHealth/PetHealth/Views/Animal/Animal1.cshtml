@@ -1,0 +1,147 @@
+﻿@model IEnumerable<PetHealth.Models.modelAnimal>
+
+@{
+    ViewBag.Title = "Animal";
+}
+
+
+@*<div class="">
+        <div class="row center">
+            <div class="col-lg-9">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+                            <div class="card h-100">
+                                @if (item.fotoAnimal != null)
+                                {
+                                    <img class="card-img-right flex-auto d-none d-md-block" data-ng-src=" " alt="Thumbnail [300x300]"
+                                         style="width: 300px; height: 300px;" src="@item.fotoAnimal" data-holder-rendered="true" />
+                                }
+                                else
+                                {
+                                    <img class="card-img-right flex-auto d-none d-md-block" data-ng-src=" " alt="Thumbnail [300x300]"
+                                         style="width: 300px; height: 300px;" src="~/Imagens/image-not-found.jpg" data-holder-rendered="true" />
+                                }
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        @Html.DisplayFor(modelItem => item.Animal)
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        @Html.DisplayFor(modelItem => item.descAnimal)
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>*@
+<div id="carouselExample" class="carousel carousel-dark slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="width:70%; margin-left:16%">
+            <img src="~/Imagens/carrosel.png" class="d-block w-100" alt="...">
+            @*<div class="carousel-caption d-none d-md-block">
+                    <h5>O cuidado</h5>
+                    <p style="font-size:30px; position:absolute;">com o seu Pet</p>
+                </div>*@
+        </div>
+        <div class="carousel-item" style="width: 70%; margin-left: 16%">
+            <img src="~/Imagens/carrosel02.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" style="width: 70%; margin-left: 16%; margin-top:1%">
+            <img src="~/Imagens/carrosel03.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <i class="fa-solid fa-play fa-rotate-180 fa-2xl" style="color:#111853"></i>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <i class="fa-solid fa-play fa-2xl" style="color:#111853"></i>
+    </button>
+</div>
+<div class="align-text-top1" ;>
+    <p class="textAbout" ; style="font-weight: 600;">Saiba Mais sobre nossos cuidados com os animais</p>
+</div>
+<br />
+<div class="container text-center">
+
+    <div class="row g-0 text-center">
+        <div class="col-sm-6 col-md-4">
+
+            <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                <img src="~/Imagens/papagaio.png" class="card-img-top" alt="...">
+                @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">AVES</p>
+                @*</div>*@
+
+            </div>
+        </div>
+        <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853"></div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="row g-0 text-center">
+        <div class="col-sm-6 col-md-4">
+
+            <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                <img src="~/Imagens/gato.png" class="card-img-top" alt="...">
+                @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">AVES</p>
+                @*</div>*@
+
+            </div>
+        </div>
+        <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="row g-0 text-center">
+        <div class="col-sm-6 col-md-4">
+
+            <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                <img src="~/Imagens/cachorro.png" class="card-img-top" alt="...">
+                @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">AVES</p>
+                @*</div>*@
+
+            </div>
+        </div>
+        <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="row g-0 text-center">
+        <div class="col-sm-6 col-md-4">
+
+            <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                <img src="~/Imagens/peixe.png" class="card-img-top" alt="...">
+                @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">AVES</p>
+                @*</div>*@
+
+            </div>
+        </div>
+        <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853"></div>
+    </div>
+</div>
+
+<footer class="rodape">
+    <div class="support" style="background: #111853; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 190px 0px; transform: rotate(0.59deg); position: absolute; width: 400.66px; height: 300.03px; left: 995.43px; top: 4000px; ">
+        <p style="margin-left:100px; color:white; text-align:center; padding-top:50px">
+            1-800-660-0565 support@petcare.ca Avenida Carvalho Orvalho,1129 BR 128
+        </p>
+    </div>
+    <div class="support1" style="background: #111853; border-radius: 33px; position: absolute; width: 186px; height: 213px; left: 100px; top: 4000px;">
+        <p style="margin-right:100px; color:white; text-align:center; padding-top:50px"></p>
+    </div>
+    <img src="~/Imagens/Patinhas.png" alt="..." style="width:170vh;" />
+    <p>&copy; @DateTime.Now.Year - Pet Health</p>
+</footer>

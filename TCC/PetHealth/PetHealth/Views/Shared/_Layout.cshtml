@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/bb2c2b07fd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;700&family=Merienda:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color:#111853">
+        <div class="container-fluid" style="font-size: 20px; color:white;">
+            <a class="navbar-brand" href="#">
+                <img src="~/Imagens/logo.png" alt="Logo" width="185" height="70" class="d-inline-block align-text-top left">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar a navegação" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav">
+                    @*@if (Session["tipoLogado0"] == null)
+        {
+            <li style="margin-right:120px;">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li style="margin-right:120px;">@Html.ActionLink("Pets", "Animal", "Animal")</li>
+            <li style="margin-right:120px;">@Html.ActionLink("Planos", "Planos", "Home")</li>
+            <li style="margin-right:120px;">@Html.ActionLink("Sobre Nós", "Sobre", "Home")</li>
+        }*@
+                    @if (Session["tipoLogado0"] != null)
+                    {
+                        <li style="margin-right:120px;">@Html.ActionLink("Animais", "ListarPetAdm", "Pet")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Clientes", "ListarCliente", "Cliente")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Meu perfil", "usuarioAdmin", "Login")</li>
+                    }
+                    @if (Session["tipoLogado1"] != null)
+                    {
+                        <li style="margin-right:120px;">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Meus Pets", "ListarPet", "Pet")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Cadastrar Novo", "CadastrarPet", "Pet")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Área Cliente", "usuarioComum", "Login")</li>
+                    }
+                    @if (Session["tipoLogado1"] == null && Session["tipoLogado0"] == null)
+                    {
+                        <li style="margin-right:120px;">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Pets", "Animal", "Animal")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Planos", "Planos", "Home")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Sobre Nós", "Sobre", "Home")</li>
+                        <li style="margin-right:120px;">@Html.ActionLink("Login", "Login", "Login")</li>
+                    }
+
+                    @if (Session["tipoLogado1"] != null || Session["tipoLogado0"] != null)
+                    {
+                        <li style="margin-right:120px;">@Html.ActionLink("Sair", "Logout", "Home")</li>
+                    }
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<style>
+
+    /*img {
+        position: absolute;
+        width: 164px;
+        height: 66px;
+        left: 47px;
+    }*/
+
+
+    .navbar-nav > li > a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar-nav > li:hover > a,
+    .navbar-nav > li.active > a {
+        background-color: #D9D9D9;
+        color: black;
+    }
+
+    body {
+        font-family: 'Inria Sans', sans-serif;
+        background: linear-gradient( rgba(100, 148, 156, 0.51) 25%, #0081CF 100%);
+        padding-bottom: 0px;
+        margin: 0px;
+        padding-top: 0px;
+    }
+</style>
+

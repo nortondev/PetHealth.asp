@@ -1,0 +1,227 @@
+﻿@model IEnumerable<PetHealth.Models.modelAnimal>
+
+@{
+    ViewBag.Title = "Animal";
+}
+
+
+@*<div class="">
+        <div class="row center">
+            <div class="col-lg-9">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+                            <div class="card h-100">
+                                @if (item.fotoAnimal != null)
+                                {
+                                    <img class="card-img-right flex-auto d-none d-md-block" data-ng-src=" " alt="Thumbnail [300x300]"
+                                         style="width: 300px; height: 300px;" src="@item.fotoAnimal" data-holder-rendered="true" />
+                                }
+                                else
+                                {
+                                    <img class="card-img-right flex-auto d-none d-md-block" data-ng-src=" " alt="Thumbnail [300x300]"
+                                         style="width: 300px; height: 300px;" src="~/Imagens/image-not-found.jpg" data-holder-rendered="true" />
+                                }
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        @Html.DisplayFor(modelItem => item.Animal)
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        @Html.DisplayFor(modelItem => item.descAnimal)
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>*@
+<div id="carouselExample" class="carousel carousel-dark slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="width:70%; margin-left:16%">
+            <img src="~/Imagens/carrosel.png" class="d-block w-100" alt="...">
+            @*<div class="carousel-caption d-none d-md-block">
+                    <h5>O cuidado</h5>
+                    <p style="font-size:30px; position:absolute;">com o seu Pet</p>
+                </div>*@
+        </div>
+        <div class="carousel-item" style="width: 70%; margin-left: 16%">
+            <img src="~/Imagens/carrosel02.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" style="width: 70%; margin-left: 16%; margin-top:1%">
+            <img src="~/Imagens/carrosel03.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <i class="fa-solid fa-play fa-rotate-180 fa-2xl" style="color:#111853"></i>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <i class="fa-solid fa-play fa-2xl" style="color:#111853"></i>
+    </button>
+</div>
+<div class="textcentro">
+    <h4><span class="legal">C</span>uidados com os <span class="editext">Pets</span></h4>
+</div>
+<br />
+<br />
+<br />
+<br />
+    <div class="container text-center">
+
+        <div class="row g-0 text-center">
+            <div class="col-sm-6 col-md-4">
+                <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                    <img src="~/Imagens/papagaio.png" class="card-img-top" alt="...">
+                    @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                    <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">AVES</p>
+                    @*</div>*@
+                </div>
+            </div>
+            <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853; width: 620px">
+                <p class="sobre-animal"> <i class="fa-solid fa-dove" style="color: #ffffff;"></i> Cuidados relacionados às Aves</p>
+                <ul class="lista">
+                    <li>Alojamento adequado</li>
+                    <br />
+                    <li>Limpeza da Gaiola</li>
+                    <br />
+                    <li>Nutrição Balanceada</li>
+                    <br />
+                    <li>Socialização e Estimulação</li>
+                    <br />
+                    <li>Água Limpa e Fresca</li>
+                    <br />
+                    <li>Controle de temperatura e umidade</li>
+                </ul>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <div class="row g-0 text-center">
+            <div class="col-sm-6 col-md-4">
+
+                <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                    <img src="~/Imagens/gato.png" class="card-img-top" alt="...">
+                    @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                    <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">GATO</p>
+                    @*</div>*@
+
+                </div>
+            </div>
+            <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853; width: 620px">
+                <p class="sobre-animal"><i class="fa-solid fa-cat" style="color: #ffffff;"></i> Cuidados relacionados aos Gatos</p>
+                <ul class="lista">
+                    <li>Higiene e banho</li>
+                    <br />
+                    <li>Tosquia e cuidados com pelo</li>
+                    <br />
+                    <li>Corte de unhas</li>
+                    <br />
+                    <li>Limpeza das orelhas</li>
+                    <br />
+                    <li>Cuidados Médicos</li>
+                    <br />
+                    <li>Cuidados Dentários</li>
+                </ul>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row g-0 text-center">
+            <div class="col-sm-6 col-md-4">
+
+                <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                    <img src="~/Imagens/cachorro.png" class="card-img-top" alt="...">
+                    @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                    <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">CACHORRRO</p>
+                    @*</div>*@
+
+                </div>
+            </div>
+            <div class="col-6 col-md-8" style=" padding: 10px; border-radius: 10%; background-color: #111853; width:620px">
+                <p class="sobre-animal"> <i class="fa-solid fa-paw" style="color: #ffffff;"></i> Cuidados relacionados aos Cachorros</p>
+                <ul class="lista">
+                    <li>Higiene e banho</li>
+                    <br />
+                    <li>Corte de pelo e Tosa</li>
+                    <br />
+                    <li>Corte de Unhas</li>
+                    <br />
+                    <li>Limpeza das Orelhas</li>
+                    <br />
+                    <li>Cuidados Dentários</li>
+                    <br />
+                    <li>Cuidados Médicos</li>
+                </ul>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row g-0 text-center">
+            <div class="col-sm-6 col-md-4">
+
+                <div class="card" style="width: 18rem; padding: 10px; border-radius: 10%; background-color: #111853">
+                    <img src="~/Imagens/peixe.png" class="card-img-top" alt="...">
+                    @*<div class="card-body"style="background-color:#111853; border-radius: 0px 0px 30px 30px">*@
+                    <p class="card-text" style="color: white; font-size: 30px; font-weight: 600;">PEIXE</p>
+                    @*</div>*@
+
+                </div>
+            </div>
+            <div class="col-6 col-md-8" style="padding: 10px; border-radius: 10%; background-color: #111853; width:620px">
+                <p class="sobre-animal"> <i class="fa-solid fa-fish" style="color: #ffffff;"></i> Cuidados relacionados os Peixes</p>
+                <ul class="lista">
+                    <li>Qualidade da Água</li>
+                    <br />
+                    <li>Manutenção e limpeza do áquario</li>
+                    <br />
+                    <li>Alimentação adequada</li>
+                    <br />
+                    <li>Tratamento de doenças</li>
+                    <br />
+                    <li>Água Limpa e Fresca</li>
+                    <br />
+                    <li>Controle de temperatura e umidade</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<style>
+    .textcentro h4{
+        text-align:center;
+        font-size:68px;
+        font-weight:700;
+        color:white;
+    }
+
+    .editext {
+        font-family: 'Merienda', cursive;
+        color: #111853;
+    }
+
+    .legal {
+        color: #111853;
+    }
+
+    .sobre-animal{
+        color:white;
+        padding-top:18px;
+        font-size:28px;
+    }
+
+    .lista{
+        text-decoration:none;
+        color:white;
+        font-size:18px;
+        list-style-type:none;
+    }
+</style>

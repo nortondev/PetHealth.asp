@@ -1,0 +1,120 @@
+﻿@model PetHealth.Models.modelLogin
+@{
+    ViewBag.Title = "Login Usuário";
+}
+@ViewBag.confCadastro
+
+@if (ViewBag.msgLogar != null)
+{
+    <div class="mensagem-estilo">@ViewBag.msgLogar</div>
+}
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <h1 style="color:white; font-weight:700;"><span class="legal">L</span>ogin</h1>
+    <div class="fundo-login">
+        <fieldset>
+            <br />
+            <br />
+            <div class="form-group" style="margin-left:30%">
+                <div class="input-group" style="border-radius:50%">
+                    <span><i style="font-size:30px;"></i></span>
+                    @Html.EditorFor(x => x.Usuario, new
+                      {
+                            htmlAttributes = new
+                        {
+                            id = "txtUsuario",
+                            senha = "txtUsuario",
+                            type = "text",
+                            @class = "form-control",
+                            placeholder = "Digite o usuário",
+                            required = "required",
+                            maxLength = "50"
+                        }
+                     })
+                    @Html.ValidationMessageFor(x => x.Usuario, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <br />
+            <div class="form-group" style="margin-left:30%">
+                <div class="input-group">
+                    <span><i style="font-size:20px;"></i></span>
+
+                    @Html.EditorFor(x => x.Senha, new
+                    {
+                        htmlAttributes = new
+                        {
+                            id = "txtSenha",
+                            senha = "txtSenha",
+                            type = "password",
+                            @class = "form-control",
+                            placeholder = "Digite sua senha",
+                            required = "required",
+                            maxLength = "50"
+                        }
+                    })
+                    @Html.ValidationMessageFor(x => x.Senha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <input type="submit" class="btn btn-primary" style="margin-left:41%; width:15%" value="ENTRAR" /><br />
+            <br />
+            <button class="btn btn-primary" style="margin-left:43.5%; font-size:15px;">
+                @Html.ActionLink("Cadastro", "CadastroLogin", "Login", new { area = "" }, new { @class = "nav-link" })
+            </button>
+        </fieldset>
+    </div>
+}
+<footer>
+    <h1></h1>
+</footer>
+<style>
+    h1 {
+        text-align: center;
+        padding-top: 10%;
+        color: white;
+    }
+
+
+    .fundo-login {
+        position: relative;
+        width: 800px;
+        left: 265px;
+        background-color: #111853;
+        border-radius: 40px;
+        height:290px;
+    }
+
+
+    @*Colorir apenas letras nas palavras*@
+    /*.two-colors {
+        font-size: 51px;
+        background: linear-gradient(to right, #111853 46%, white 1%, white 47%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }*/
+
+    .legal {
+        color: #111853;
+    }
+    input {
+        background-color: #5EC3D0;
+        border-radius: 20px;
+        color: white;
+        font-size: 20px;
+    }
+    footer{
+        padding-bottom:20px;
+    }
+
+    .mensagem-estilo {
+        background-color: #F5F5F5;
+        color: #333333;
+        padding: 10px;
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+</style>

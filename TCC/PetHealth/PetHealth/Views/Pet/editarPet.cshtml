@@ -1,0 +1,155 @@
+﻿@model PetHealth.Models.modelPet
+
+@{
+    ViewBag.Title = "Editar Pet";
+}
+
+<h2 style="text-align:center; font-weight:bold; font-size:42px; color:white;">Editar <span class="legal">Pet</span></h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h2>modelPet</h2>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nomePet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nomePet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nomePet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.DropDownList("animais", "Escolha o Animal")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.idAnimal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.DropDownList("sexos", "Escolha o Sexo")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.idSexo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.racaPet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.racaPet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.racaPet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idadePet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idadePet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idadePet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.pesoPet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pesoPet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pesoPet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.DropDownList("planos", "Escolha o Plano")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.idPlano, "", new { @class = "dropdown-estilizado" })
+            </div>
+        </div>
+
+        <div class="form-group center">
+            <div>
+                <label class="control-label col-md-2" for="file">Capa Livro</label>
+            </div>
+            <div class="col-md-10">
+                <input type="file" name="file" id="file" /> <br />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="button2" style="color:white;" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar para a lista", "ListarPet", "Pet", new { @class = "estilo-link"} )
+</div>
+
+
+<style>
+    .estilo-link
+    {
+        text-decoration:none;
+        color:white;
+        font-weight:700;
+    }
+
+    .container {
+        position: relative;
+        width: 800px;
+    }
+
+    .form-horizontal {
+        font-size: 20px;
+        color: white;
+        width: 100%;
+    }
+
+    .form-group {
+        position: relative;
+        width: 350px;
+        left: 28%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .col-md-10 {
+        position: relative;
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .control-label .col-md-2 {
+        position: relative;
+        width: 450px;
+        left: 28%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .button2 {
+        background-color: #111853;
+        border-radius: 25px;
+        width: 42%;
+        margin-left: 32%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        border: none;
+    }
+
+    .legal
+    {
+        color:#111853;
+        font-family: 'Merienda', cursive;
+    }
+</style>

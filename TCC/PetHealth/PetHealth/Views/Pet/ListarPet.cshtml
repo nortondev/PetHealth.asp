@@ -1,0 +1,124 @@
+﻿@model IEnumerable<PetHealth.Models.modelPet>
+
+@{
+    ViewBag.Title = "Lista de Pets";
+}
+
+<h2 style="font-size:38px; font-weight:700; text-align:center; color:white;">Meus <span class="legal">Pets</span></h2>
+<br />
+<p style="text-align:center; background-color:white; width:220px; border-radius:50px; margin-left:534px;">
+    <a href="/Pet/CadastrarPet" style="text-decoration:none; color:#111853; font-size:18px;"> <i class="fa-solid fa-plus fa-beat" style="color:#111853"></i> Cadastrar Novo Pet</a>
+</p>
+<p style="text-align:center; background-color:white; width:220px; border-radius:50px; margin-left:534px;">
+    <a href="/Pet/Pet" style="text-decoration:none; color:#111853; font-size:18px;"> <i class="fa-solid fa-scroll"></i> Detalhes</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomePet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idAnimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idSexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.racaPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idadePet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pesoPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fotoPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomePlano)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomePet)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.idAnimal)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.idSexo)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.racaPet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idadePet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pesoPet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fotoPet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomePlano)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.nomeCliente)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.idPlano)
+        </td>*@
+
+        <td>
+            @Html.ActionLink("Atualizar", "editarPet", new { id = item.idPet }, new { @class = "estilo-link" })  |
+            @Html.ActionLink("Excluir", "excluirPet", new { id = item.idPet }, new { @class = "estilo-link" }) |
+        </td>
+    </tr>
+}
+
+</table>
+<footer>
+    <h1></h1>
+</footer>
+
+<style>
+    .legal {
+        font-family: 'Merienda', cursive;
+        color: #111853;
+    }
+
+    .estilo-link
+    {
+        text-decoration:none;
+        color:white;
+    }
+
+    h2{
+        padding-top:40px;
+    }
+
+
+    footer{
+        padding-top:400px;
+    }
+</style>

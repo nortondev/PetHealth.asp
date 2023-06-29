@@ -1,0 +1,210 @@
+﻿@model PetHealth.Models.modelPet
+
+
+
+@{
+    ViewBag.Title = "Cadastrar Pet";
+}
+
+<h2 style="font-size:50px; text-align:center; font-weight:700; padding-top:20px; padding-bottom:20px; color:#111853">Cadastrar meu <span class="legal">Pet</span></h2>
+<div class="container">
+    @using (Html.BeginForm("CadastrarPet", "Pet", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4 class="legal1">Insira os dados</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nomePet, htmlAttributes: new { @class = "nome-exibicao" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nomePet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nomePet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.DropDownList("animais", "Escolha o Animal")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.idAnimal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.DropDownList("sexos", "Escolha o Sexo")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.idSexo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.racaPet, htmlAttributes: new { @class = "nome-exibicao" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.racaPet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.racaPet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.idadePet, htmlAttributes: new { @class = "nome-exibicao" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idadePet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idadePet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.pesoPet, htmlAttributes: new { @class = "nome-exibicao" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pesoPet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pesoPet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.DropDownList("planos", "Escolha o Plano")
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.idPlano, "", new { @class = "dropdown-estilizado" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group center">
+            <div>
+                <label class="file" for="file">Clique para selecionar a foto:</label>
+            </div>
+            <div class="col-md-10">
+                <input type="file" name="file" id="file" /> <br />
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.idCliente, htmlAttributes: new { @class = "nome-exibicao" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idCliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idCliente, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:40px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Adicionar" class="button1" style="color:white;" />
+            </div>
+        </div>
+    </div>
+    }
+</div>
+<br />
+<div>
+    <button type="button" class="button2">
+        <a href="ListarPet/Pet" style="text-decoration:none; color:white">Voltar para a Lista</a>
+    </button>
+</div>
+
+
+<style>
+    .container {
+        position: relative;
+        width: 800px;
+    }
+
+    .form-horizontal {
+        font-size: 20px;
+        color: white;
+        width: 100%;
+    }
+    
+    .form-group
+    {
+        position:relative;
+        width:350px;
+        left:28%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+    }
+
+    .col-md-11 {
+        position: relative;
+        width: 300px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+    }
+
+    .legal {
+        font-family: 'Merienda', cursive;
+        color: #111853;
+    }
+
+    .control-label .col-md-2 {
+        position: relative;
+        width: 450px;
+        left: 28%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .legal1 {
+        color: #111853;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .button1 {
+        background-color: #111853;
+        border-radius: 25px;
+        width: 42%;
+        margin-left: 16%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        border: none;
+    }
+
+    .button2 {
+        background-color: #111853;
+        border-radius: 25px;
+        width: 42%;
+        margin-left: 32%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        border: none;
+    }
+
+    .nome-exibicao
+    {
+        color:#111853;
+        font-weight:700;
+    }
+
+    .dropdown-estilizado
+    {
+        background-color:#111853;
+        color:#ff0000;
+    }
+
+     /*Esconde o botão "Escolher arquivo" padrão */
+    input[type="file"] {
+        display: none;
+    }
+
+     /*Estiliza o botão personalizado */
+    .file {
+        border: 1px solid #111853;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        background-color:#111853;
+    }
+
+     /*Estiliza a área de visualização do nome do arquivo */
+    .file-name {
+        margin-top: 10px;
+    }
+
+</style>
